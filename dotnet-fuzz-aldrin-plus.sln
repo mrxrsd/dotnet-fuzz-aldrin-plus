@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnetFuzzAldrinPlus", "dotnetFuzzAldrinPlus\dotnetFuzzAldrinPlus.csproj", "{163E4E1A-FA19-42BA-A2F2-D76C18198FA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{3775C6C1-260D-4558-87F7-3674B71C2CA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{163E4E1A-FA19-42BA-A2F2-D76C18198FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{163E4E1A-FA19-42BA-A2F2-D76C18198FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{163E4E1A-FA19-42BA-A2F2-D76C18198FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3775C6C1-260D-4558-87F7-3674B71C2CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3775C6C1-260D-4558-87F7-3674B71C2CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3775C6C1-260D-4558-87F7-3674B71C2CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3775C6C1-260D-4558-87F7-3674B71C2CA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

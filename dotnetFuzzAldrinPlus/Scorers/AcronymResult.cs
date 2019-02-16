@@ -2,9 +2,9 @@ namespace dotnetFuzzAldrinPlus.Scorers
 {
     public class AcronymResult
     {
-        private double Score { get; }
-        private double Pos { get; }
-        private int Count { get; }
+        public double Score { get; }
+        public double Pos { get; }
+        public int Count { get; }
 
         public AcronymResult(double score, double pos, int count)
         {

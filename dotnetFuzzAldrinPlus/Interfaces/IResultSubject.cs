@@ -1,6 +1,6 @@
 namespace dotnetFuzzAldrinPlus.Interfaces
 {
-    public interface IResultSubject : ISubject
+    public interface IResultSubject : ISubject, IScored
     {
         
     }
