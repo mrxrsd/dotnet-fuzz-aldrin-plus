@@ -1,7 +1,7 @@
-using System.Resources;
+using dotnetFuzzAldrinPlus.Interfaces;
 using dotnetFuzzAldrinPlus.Scorers;
 
-namespace dotnetFuzzAldrinPlus.Interfaces
+namespace dotnetFuzzAldrinPlus
 {
     public class StringScorerOptions
     {
@@ -32,11 +32,13 @@ namespace dotnetFuzzAldrinPlus.Interfaces
         }
 
         public bool UsePathScoring => _usePathScoring;
+
         public string PathSeparator => _pathSeparator;
 
         public bool UseExtensionBonus => _useExtensionBonus;
 
-        public bool AllErrows => _allowErros;
+        public bool AllowErrors => _allowErros;
+
         public int? MaxInners => _maxInners;
 
         public int? MaxResults => _maxResults;

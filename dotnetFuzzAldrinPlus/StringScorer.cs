@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using dotnetFuzzAldrinPlus.Filter;
 using dotnetFuzzAldrinPlus.Interfaces;
+using dotnetFuzzAldrinPlus.Matcher;
 
 namespace dotnetFuzzAldrinPlus
 {
@@ -32,7 +33,28 @@ namespace dotnetFuzzAldrinPlus
                 
             return result.ConvertAll(Convert).ToArray();
         }
-        
+
+        public static double Score(string subject, string query, StringScorerOptions options = null)
+        {
+            if (string.IsNullOrEmpty(subject) || string.IsNullOrEmpty(query)) return 0;
+
+            options = options ?? new StringScorerOptions();
+            options.Init(query);
+
+            return options.ScorerEngine.Score(subject, query, options);
+        }
+
+        public static int[] Match(string subject, string query, StringScorerOptions options = null)
+        {
+            if (string.IsNullOrEmpty(subject) || string.IsNullOrEmpty(query)) return new int[] {};
+
+            options = options ?? new StringScorerOptions();
+            options.Init(query);
+
+            return WordMatcher.Match(subject, query, options);
+        }
+
+
         #region Helpers
 
         private static ISubject Convert(ICandidate candidate)

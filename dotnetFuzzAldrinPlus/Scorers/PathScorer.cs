@@ -14,8 +14,7 @@ namespace dotnetFuzzAldrinPlus.Scorers
         
         public double Score(string subject, string query, StringScorerOptions options)
         {
-            if (!(options.AllErrows ||
-                  Scorer.IsMatch(subject, options.PreparedQuery.CoreLw, options.PreparedQuery.CoreUp)))
+            if (!(options.AllowErrors || Scorer.IsMatch(subject, options.PreparedQuery.CoreLw, options.PreparedQuery.CoreUp)))
             {
                 return 0;
             }
@@ -60,13 +59,10 @@ namespace dotnetFuzzAldrinPlus.Scorers
             }
             else
             {
-                basePathScore = extAdjust * Scorer.ComputeScore(subject.Slice(basePos + 1, end + 1),
-                                    subjectLw.Slice(basePos + 1, end + 1), options.PreparedQuery);
+                basePathScore = extAdjust * Scorer.ComputeScore(subject.Slice(basePos + 1, end + 1), subjectLw.Slice(basePos + 1, end + 1), options.PreparedQuery);
             }
 
-            var alpha = 0.5 * CONST_TAU_DEPTH / (CONST_TAU_DEPTH +
-                                                 ScorerUtil.CountDir(subject, end + 1,
-                                                     Convert.ToChar(options.PreparedQuery)));
+            var alpha = 0.5 * CONST_TAU_DEPTH / (CONST_TAU_DEPTH + ScorerUtil.CountDir(subject, end + 1, Convert.ToChar(options.PathSeparator)));
 
             return alpha * basePathScore + (1 - alpha) * score * Scorer.ScoreSize(0, CONST_FILE_COEFF * (fileLength));
         }

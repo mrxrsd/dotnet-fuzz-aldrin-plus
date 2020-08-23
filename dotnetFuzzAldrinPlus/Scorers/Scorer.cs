@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using dotnetFuzzAldrinPlus.Interfaces;
 
+
 namespace dotnetFuzzAldrinPlus.Scorers
 {
     public class Scorer : IScorerEngine
@@ -15,7 +16,7 @@ namespace dotnetFuzzAldrinPlus.Scorers
 
         public double Score(string subject, string query, StringScorerOptions options)
         {
-            if (!(options.AllErrows || IsMatch(subject, options.PreparedQuery.CoreLw, options.PreparedQuery.CoreUp))) return 0;
+            if (!(options.AllowErrors || IsMatch(subject, options.PreparedQuery.CoreLw, options.PreparedQuery.CoreUp))) return 0;
 
             var stringLw = subject.ToLower();
             var score = ComputeScore(subject, stringLw, options.PreparedQuery);

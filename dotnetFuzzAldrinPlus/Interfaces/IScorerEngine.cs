@@ -1,6 +1,6 @@
 using dotnetFuzzAldrinPlus.Interfaces;
 
-namespace dotnetFuzzAldrinPlus.Scorers
+namespace dotnetFuzzAldrinPlus.Interfaces
 {
     public interface IScorerEngine
     {
