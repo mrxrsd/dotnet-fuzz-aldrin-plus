@@ -2,7 +2,7 @@
 
 I don't know if I can call this a port because I basically translate the code. At some spots I even followed the coffeescript case.
 
-Original Project: (fuzz-aldrin-plus)[https://github.com/jeancroy/fuzz-aldrin-plus]
+Original Project: [fuzz-aldrin-plus](https://github.com/jeancroy/fuzz-aldrin-plus)
 
 ---
 
